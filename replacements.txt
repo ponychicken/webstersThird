@@ -1,0 +1,22 @@
+gsed -i 's/<b><font color=\"#A52A2A\">/<span class=\"prounciation\">/g' out.xml
+gsed -i 's/<i><font color="#00FF00">/<span class=\"wordtype">/g' out.xml
+gsed -i 's/<font color="#008000">/<span class="example">/g' out.xml
+gsed -i 's/<b><font color="#424242">/<span class="listHeader">/g' out.xml
+gsed -i 's/<i><font color="#FF0000">/<span class="seeAlso">/g' out.xml
+gsed -i 's/<font color="#00FF00">/<span class="th">/g' out.xml
+gsed -i 's/<\/font><\/i>/<\/span>/g' out.xml
+gsed -i 's/<\/font><\/b>/<\/span>/g' out.xml
+gsed -i 's/<\/font>/<\/span>/g' out.xml
+gsed -i 's/<\/a><\/b>/<\/a>/g' out.xml
+gsed -i 's/<b><a /<a /g' out.xml
+
+perl -0777 -i.original -pe 's/<\/h1>\n<br\/>/<\/h1> /g' out.xml
+
+gsed -i 's/ see <a / \&#9758; <a /g' out.xml
+
+perl -0777 -i.original -pe 's/(<span.*?)<\/span>\s*<b>\:<\/b>/\\1:<\/span>/g' out.xml
+
+gsed -i 's/<br\/>\s*<b>:<\/b>\s*/: /g' out.xml
+
+// Doesn't work?
+gsed -i 's/\s*<br\/>\(<b>\-s<\/b>\)/<span class="alt">(-s)<\/span>/g' out.xml
