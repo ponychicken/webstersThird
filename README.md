@@ -22,5 +22,5 @@ node index.js
 Building the dictionary might take a while (around three minutes on my machine)
 
 
-#### Just want the .dictionay file?
+#### Just want the .dictionary file?
 Download it in the [releases section](https://github.com/DieBuche/WebsterParser/releases) of this project.
